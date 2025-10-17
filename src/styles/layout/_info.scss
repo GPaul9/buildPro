@@ -1,0 +1,37 @@
+@use '../base/variables' as *;
+
+.info {
+  padding: 228px 0 102px;
+  background: url(../../assets/info-bg.webp) center center no-repeat;
+  background-size: cover;
+
+  &__content {
+    padding: 60px 56px;
+    border-radius: 20px;
+
+    max-width: 890px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    background-color: rgba($color-content-primary, 0.2);
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 34px;
+    color: $color-content-accent;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-size: 4rem;
+    line-height: 3rem;
+    font-weight: 700;
+    color: $color-content-secondary;
+  }
+
+  &__caption {
+    color: $color-background;
+  }
+}

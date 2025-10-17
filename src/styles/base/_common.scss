@@ -1,0 +1,163 @@
+@use './variables' as *;
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+
+  &__logo {
+    width: 192px;
+    height: 53px;
+  }
+
+  &__list {
+    padding: 0;
+    padding-top: 9px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    color: $color-content-nav;
+    text-shadow: 0 2px 2px rgba($color-content-nav, 0.25);
+  }
+
+  &__link {
+    position: relative;
+    outline: transparent;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      transition: opacity 0.1s linear, border 0.1s linear, box-shadow 0.2s linear;
+    }
+
+    &:focus-visible:not(:hover)::before {
+      border: 2px solid currentColor;
+      border-radius: 10px;
+      box-shadow: 0 0 80px currentColor;
+      opacity: 0.8;
+    }
+
+    &:hover:not(:active)::before {
+      border-top: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      border-radius: 10px;
+    }
+
+    &:active {
+      top: 2px;
+
+      &:before {
+        border-top: 4px solid currentColor;
+        border-radius: 10px;
+      }
+    }
+
+  }
+
+  &__help {
+    line-height: 1.5rem;
+    padding: 11px 34px;
+    border: 4px solid $color-content-accent;
+    border-radius: 100px;
+    color: $color-content-secondary;
+    background-color: $color-content-accent;
+    outline: transparent;
+    transition: border 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+
+    &:focus-visible:not(:hover) {
+      color: $color-content-accent;
+      background-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+    &:hover {
+      color: $color-content-accent;
+      background-color: transparent;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.section-header {
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 24px;
+
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: $color-content-accent;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+    color: $color-content-primary;
+  }
+
+  &__caption {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: $color-content-light;
+  }
+}
+
+
+// swiper
+.swiper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-controls {
+  display: flex;
+  align-items: center;
+  gap: 41px;
+}
+
+.swiper-button-icon {
+  width: 23px;
+  height: 24px;
+  color: $color-navigation;
+
+  &:focus-visible,
+  &:hover {
+    color: $color-navigation-active;
+  }
+}
+
+.swiper-scrollbar {
+  border-radius: 5px;
+  width: 324px;
+  height: 5px;
+  background-color: rgba($color-scrollbar, 0.2);
+}
+
+.swiper-scrollbar-drag {
+  border-radius: inherit;
+  height: 100%;
+  background: $color-scrollbar-drag;
+}
+// -------------
