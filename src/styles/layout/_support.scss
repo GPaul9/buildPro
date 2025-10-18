@@ -1,13 +1,27 @@
 @use '../base/variables' as*;
+@use '../base/breakpoints' as*;
 
 .support {
   padding: 70px 0;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 50px 0;
+  }
 
   &__content {
     padding: 0 27px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: $breakpoint-xl) {
+      padding: 0;
+    }
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+      margin-bottom: 30px;
+      flex-direction: column;
+    }
   }
 
   // form
@@ -23,6 +37,24 @@
     border-color: $color-content-light;
     border-top-color: $color-content-accent;
     max-width: 644px;
+
+    &:has(.support__submit-btn:hover),
+    &:has(.support__submit-btn:focus-visible) {
+      border-top-color: rgba($color-content-accent, 0.8);
+    }
+
+    @media (max-width: $breakpoint-xl) {
+      padding: 45px 40px;
+    }
+
+    @media (max-width: $breakpoint-lg) {
+      margin: 0;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 52px 20px 40px;
+    }
   }
 
   &__form:has(.support__submit-btn:hover),
@@ -46,6 +78,11 @@
     &_work-time {
       margin-bottom: 41px;
     }
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
   }
 
   &__form-descr {
@@ -64,6 +101,10 @@
     margin-bottom: 48px;
     width: 100%;
     max-width: 516px;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__input {
@@ -124,6 +165,15 @@
     flex-direction: column;
     gap: 102px;
     padding: 20px 40px;
+
+    @media (max-width: $breakpoint-lg) {
+      padding: 0;
+      flex-direction: row;
+    }
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      gap: 40px;
+    }
   }
 
   &__info-text {
@@ -139,6 +189,7 @@
   &__social-link {
     outline: transparent;
     transition: color 0.3s ease;
+    white-space: nowrap;
 
     &:focus-visible,
     &:hover {

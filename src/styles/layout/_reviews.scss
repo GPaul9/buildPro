@@ -1,7 +1,12 @@
 @use '../base/variables' as *;
+@use '../base/breakpoints' as *;
 
 .reviews {
   padding: 109px 0 54px;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: 60px 0 40px;
+  }
 
   &__section-header {
     margin: 0;
@@ -13,9 +18,18 @@
     flex-direction: column;
     gap: 62px;
 
+    @media (max-width: $breakpoint-sm) {
+      gap: 40px;
+    }
+
     & .swiper-slide {
       width: 321px;
       margin-right: 83px;
+
+      @media (max-width: $breakpoint-sm) {
+        max-width: 280px;
+        margin-right: 60px;
+      }
     }
   }
 
@@ -36,11 +50,21 @@
     font-size: 1.5rem;
     line-height: 1.5rem;
     color: $color-content-primary;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
   }
 
   &__card-author {
     font-size: 1.25rem;
     line-height: 1.25rem;
     color: $color-content-accent;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
   }
 }

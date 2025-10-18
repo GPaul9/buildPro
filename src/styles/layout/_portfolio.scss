@@ -1,4 +1,5 @@
 @use '../base/variables' as *;
+@use '../base/breakpoints' as *;
 
 .portfolio {
   padding: 0;
@@ -14,9 +15,18 @@
     flex-direction: column;
     gap: 64px;
 
+    @media (max-width: $breakpoint-md) {
+      gap: 30px;
+    }
+
     & .swiper-slide {
       width: 430px;
       margin-right: 96px;
+
+      @media (max-width: $breakpoint-md) {
+        width: 375px;
+        margin-right: 50px;
+      }
     }
   }
 

@@ -1,4 +1,5 @@
 @use './base/fonts';
+@use './base/breakpoints' as *;
 @use './base/variables' as *;
 @use './base/common';
 
@@ -76,4 +77,11 @@ body {
   max-width: 1440px;
   padding: 0 100px;
   margin: 0 auto;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: 0 40px;
+  }
+  @media (max-width: $breakpoint-md) {
+    padding: 0 20px;
+  }
 }
